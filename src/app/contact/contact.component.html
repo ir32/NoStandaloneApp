@@ -1,4 +1,4 @@
-<form >
+<form #contactForm="ngForm">
     <div>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" ngModel required />
@@ -31,6 +31,6 @@
       </label>
     </div>
   
-    <button type="button" (click)="onClick()">Submit</button>
+    <button type="button" (click)="onClick(contactForm)">Submit</button>
   </form>
   

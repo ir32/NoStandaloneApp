@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -7,8 +8,12 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
 
-  onClick(): void {
-    // Log "Hello" to the console when the button is clicked
-    console.log('Hello');
+  onClick(form: NgForm): void {
+    if (form.valid) {
+      // Log the form data to the console
+      console.log('Form Data:', form.value);
+    } else {
+      console.log('Form is invalid');
+    }
   }
 }
