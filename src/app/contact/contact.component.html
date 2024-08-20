@@ -1,0 +1,36 @@
+<form >
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" ngModel required />
+    </div>
+  
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" ngModel required />
+    </div>
+  
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" ngModel />
+    </div>
+  
+    <div>
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" ngModel />
+    </div>
+  
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" ngModel required></textarea>
+    </div>
+  
+    <div>
+      <label>
+        <input type="checkbox" name="subscribe" ngModel />
+        Subscribe to newsletter
+      </label>
+    </div>
+  
+    <button type="button" (click)="onClick()">Submit</button>
+  </form>
+  
