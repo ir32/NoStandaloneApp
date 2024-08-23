@@ -1,0 +1,25 @@
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Date</th>
+        <th>Products</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of carts">
+        <td>{{ cart.id }}</td>
+        <td>{{ cart.userId }}</td>
+        <td>{{ cart.date | date: 'yyyy-MM-dd' }}</td> <!-- Format the date -->
+        <td>
+          <ul>
+            <li *ngFor="let product of cart.products">
+              Product ID: {{ product.productId }} - Quantity: {{ product.quantity }}
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
