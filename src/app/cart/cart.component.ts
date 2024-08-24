@@ -8,10 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  // take blank array
   carts: any[] = [];
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
     this.cartService.fetchData().subscribe((data) => {
@@ -30,5 +29,8 @@ export class CartComponent implements OnInit {
     }
   }
 
-  
+  // Method to navigate to AboutComponent with userId
+  goToAbout(userId: number): void {
+    this.router.navigate(['/about', userId]);
+  }
 }

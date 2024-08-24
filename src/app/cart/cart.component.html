@@ -1,28 +1,30 @@
 <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>User ID</th>
-        <th>Date</th>
-        <th>Products</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cart of carts">
-        <td>{{ cart.id }}</td>
-        <td>{{ cart.userId }}</td>
-        <td>{{ cart.date | date: 'yyyy-MM-dd' }}</td>
-        <td>
-          <ul>
-            <li *ngFor="let product of cart.products">
-              Product ID: {{ product.productId }} - Quantity: {{ product.quantity }}
-              <!-- Increment & Decrement Buttons -->
-              <button (click)="increment(product)">+</button>
-              <button (click)="decrement(product)">-</button>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>User ID</th>
+      <th>Date</th>
+      <th>Products</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cart of carts">
+      <td>{{ cart.id }}</td>
+      <td>{{ cart.userId }}</td>
+      <td>{{ cart.date | date: 'yyyy-MM-dd' }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let product of cart.products">
+            Product ID: {{ product.productId }} - Quantity: {{ product.quantity }}
+            <button (click)="increment(product)">+</button>
+            <button (click)="decrement(product)">-</button>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <button (click)="goToAbout(cart.userId)">Go to About</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

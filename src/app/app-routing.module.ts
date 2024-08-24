@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductTableComponent } from './product-table/product-table.component';
-import { CartComponent } from './cart/cart.component'; // Import CartComponent
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
-  { path: 'about', component: AboutComponent }, // Route for AboutComponent
+  { path: 'about/:userId', component: AboutComponent }, // Route with userId parameter for AboutComponent
   { path: 'contact', component: ContactComponent }, // Route for ContactComponent
   { path: 'cart', component: CartComponent }, // Route for CartComponent
   { path: '', component: ProductTableComponent }, // Default route for ProductTableComponent

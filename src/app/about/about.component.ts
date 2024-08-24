@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../services/post.service';  // Correct path
+import { ActivatedRoute } from '@angular/router';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-about',
@@ -8,10 +9,16 @@ import { PostService } from '../services/post.service';  // Correct path
 })
 export class AboutComponent implements OnInit {
   posts: any[] = [];
+  userId!: number; // Declare userId with type number
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    // Retrieve userId from the route
+    this.userId = +this.route.snapshot.paramMap.get('userId')!;
+    console.log('Received userId:', this.userId);
+
+    // Fetch posts
     this.postService.getPosts().subscribe(
       (data) => {
         this.posts = data;
@@ -22,4 +29,3 @@ export class AboutComponent implements OnInit {
     );
   }
 }
- 
