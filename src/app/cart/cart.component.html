@@ -11,11 +11,14 @@
       <tr *ngFor="let cart of carts">
         <td>{{ cart.id }}</td>
         <td>{{ cart.userId }}</td>
-        <td>{{ cart.date | date: 'yyyy-MM-dd' }}</td> <!-- Format the date -->
+        <td>{{ cart.date | date: 'yyyy-MM-dd' }}</td>
         <td>
           <ul>
             <li *ngFor="let product of cart.products">
               Product ID: {{ product.productId }} - Quantity: {{ product.quantity }}
+              <!-- Increment & Decrement Buttons -->
+              <button (click)="increment(product)">+</button>
+              <button (click)="decrement(product)">-</button>
             </li>
           </ul>
         </td>
