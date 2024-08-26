@@ -4,11 +4,13 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductTableComponent } from './product-table/product-table.component';
 import { CartComponent } from './cart/cart.component';
+import { CompaniesComponent } from './companies/companies.component'; // Import CompaniesComponent
 
 const routes: Routes = [
   { path: 'about/:userId', component: AboutComponent }, // Route with userId parameter for AboutComponent
   { path: 'contact', component: ContactComponent }, // Route for ContactComponent
   { path: 'cart', component: CartComponent }, // Route for CartComponent
+  { path: 'companies', component: CompaniesComponent }, // Route for CompaniesComponent
   { path: '', component: ProductTableComponent }, // Default route for ProductTableComponent
   { path: '**', redirectTo: '' } // Redirect unknown routes to the default route
 ];
